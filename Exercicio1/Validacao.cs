@@ -179,7 +179,6 @@ namespace Exercicio1
             }
 
             String padrao = "dd/MM/yyyy";
-            DateTime convertido;
 
             DateTime data = DateTime.ParseExact(dataNascimento, padrao, CultureInfo.InvariantCulture);
 
@@ -201,7 +200,7 @@ namespace Exercicio1
             {
                 return new ArgumentException("Valor da renda inválido.");
             }
-            if (renda[renda.Length - 3] != ',')
+            if (renda.Length < 4 || renda[renda.Length - 3] != ',')
             {
                 return new ArgumentException("Valor da renda não está no formato XXXXX,XX.");
             }
