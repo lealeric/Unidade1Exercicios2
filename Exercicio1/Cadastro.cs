@@ -46,7 +46,6 @@ namespace Exercicio1
 
         private void incluiCadastro()
         {
-            bool res;
             Validacao validacao;
             String[] entradas = new String[6];
             String[] textos = new String[6];
@@ -69,7 +68,6 @@ namespace Exercicio1
 
             while (dicionario.Count > 0)
             {
-                int[] corrigir;
 
                 Console.WriteLine(String.Format("{0,-20}:{1,-15} {2}", "Campo com erro", "Valor", "Erro"));                
                 foreach (KeyValuePair<int,Exception> id in dicionario)

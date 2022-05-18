@@ -179,7 +179,6 @@ namespace Exercicio1
             }
 
             String padrao = "dd/MM/yyyy";
-            DateTime convertido;
 
             DateTime data = DateTime.ParseExact(dataNascimento, padrao, CultureInfo.InvariantCulture);
 

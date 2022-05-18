@@ -24,6 +24,7 @@ public class Program
         Console.WriteLine("------------Desassociando um aluno a uma turma------------");
         curso.desassociaTurma();
         Console.WriteLine("------------Removendo um aluno de uma turma------------");
-        curso.
+        Console.WriteLine("Insira a matrícula do aluno a remover");
+        curso.retornaAluno(Convert.ToInt32(Console.ReadLine()));
     }
 }
