@@ -14,6 +14,7 @@ namespace Exercicio5
 
         public void addMotor()
         {
+            motores = new List<Motor>();
             Console.WriteLine("Insira o identificador do motor:");
             int id = Convert.ToInt32(Console.ReadLine());
 
@@ -24,6 +25,7 @@ namespace Exercicio5
         }
         public void addCarro()
         {
+            carros = new List<Carro>();
             Console.WriteLine("Insira a placa do carro:");
             String placa = Console.ReadLine();
 
@@ -32,16 +34,7 @@ namespace Exercicio5
 
             Console.WriteLine("Insira o id do motor:");
             int idMotor = Convert.ToInt32(Console.ReadLine());
-            Motor motor = null;
-
-            for (int i = 0; i < motores.Count; i++)
-            {
-                if (motores[i].retornaMotor(idMotor) != null)
-                {
-                    motor = motores[i];
-                    break;
-                }
-            }
+            Motor motor = this.retornaMotor(idMotor);
 
             if (motor == null)
             {
@@ -55,6 +48,54 @@ namespace Exercicio5
             carros.Add(new Carro(placa, modelo, motor));
         }
 
+        private Motor retornaMotor(int id)
+        {
+            Motor m = null;
+
+            for (int i = 0; i < motores.Count; i++)
+            {
+                if (motores[i].idMotor == id)
+                {
+                    m = motores[i];
+                    break;
+                }
+            }
+
+            return m;
+        }
+
+        private Motor retornaMotor(Motor motor)
+        {
+            Motor m = null;
+
+            for (int i = 0; i < motores.Count; i++)
+            {
+                if (motores[i].Equals(motor))
+                {
+                    m = motores[i];
+                    break;
+                }
+            }
+
+            return m;
+        }
+
+        private Carro retornaCarro(Carro carro)
+        {
+            Carro c = null;
+
+            for (int i = 0; i < carros.Count; i++)
+            {
+                if (carros[i].Equals(carro))
+                {
+                    c = carros[i];
+                    break;
+                }
+            }
+
+            return c;
+        }
+
         public bool alteraMotor(Carro carro, Motor novoMotor)
         {
 
@@ -64,9 +105,7 @@ namespace Exercicio5
             }
             else
             {
-                this._motor.desassociaCarro();
-                this._motor = novoMotor;
-                Console.WriteLine("Novo motor associado.");
+                this.retornaCarro(carro).alteraMotor(novoMotor);
                 return true;
             }
         }
