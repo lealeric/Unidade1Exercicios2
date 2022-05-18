@@ -30,7 +30,7 @@ public class Program
                             "---------------------------------------------");
         
         Console.WriteLine("Insira o caminho do arquivo de texto com os dados:");
-        String arquivoEntrada = Console.Readline();
+        String arquivoEntrada = Console.ReadLine();
 
         Propriedades propriedades2 = new Propriedades(arquivoEntrada);
 
