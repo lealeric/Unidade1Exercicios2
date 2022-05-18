@@ -28,8 +28,11 @@ public class Program
         Console.WriteLine("---------------------------------------------\n" +
                             "---------UTILIZANDO OUTRO CONTRUTOR----------" +
                             "---------------------------------------------");
+        
+        Console.WriteLine("Insira o caminho do arquivo de texto com os dados:");
+        String arquivoEntrada = Console.Readline();
 
-        Propriedades propriedades2 = new Propriedades("D:/Documentos/Residência Back-End/propriedades.txt");
+        Propriedades propriedades2 = new Propriedades(arquivoEntrada);
 
         Console.WriteLine("Insira a chave que deseja consultar o valor:");
         Console.WriteLine(propriedades2.retornaValor(Console.ReadLine()));
